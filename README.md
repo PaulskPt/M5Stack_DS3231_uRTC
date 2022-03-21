@@ -20,6 +20,8 @@ M5Stack_DS3231_uRTC
 In urtc.py, because I could not find a library ```ucollections``` for micropython,
 as an alternative, I use a ```Dictionary``` with the name ```DtDict```. This dictionary is used in functions ```datetime_tuple()``` and
 ```seconds2tuple```.
+
+```
 Added:
 - list ```days_since_jan1```
 - indexes for dictionary keys: ```yy, mo, dd, wd, hh, mm, ss and ms```.
@@ -30,7 +32,7 @@ Modified:
 - In ```class: _BaseRTC```, function: ```datetime()```
 Removed:
 - ```import ucollection```
-
+```
 In the file ```main.py``` is created an ```SD-Card object```. To accomplish this function ```mountit()``` in file ```mount_sd.py``` is called.
 When the SD-Card has been mounted successfully, an image file is loaded which then is displayed.
 The image loaded I did copy to this repo in the subdirectory ```sd``` inside the ```flash``` directory.
