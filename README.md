@@ -14,7 +14,7 @@
  globally between various scripts. This class has placeholders for variables and functions to set and get the variables.
 
  The file ```main.py``` was originally created as an exercise while getting acquainted to the M5Stack Core1 controller.
- This script was in the first instance written to display info about the firmware flashed into this processor. When that worked,
+ This script was in the first instance written to display info about the firmware flashed into this controller. When that worked,
  I connected an external DS3231 RTC to the ```I2C pins``` of the Core1. I needed a library for the external RTC. I found a suitable one in the
  Adafruit-uRTC. I removed the classes for other brands of RTC models. Below info about the alterations I did to urtc.py.
 
