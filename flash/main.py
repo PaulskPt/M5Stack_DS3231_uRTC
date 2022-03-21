@@ -2,8 +2,8 @@
 # M5Stack BASIC
 # UIFlow MicroPython test script
 # by Paulus Schulinck (PaulskPt@Github.com)
-# Filename: m5stack_info.py
-# NOTE lcd.fontSize(3) or other value does not work !!! Better change the font type
+# Filename: main.py
+
 try:
     import flash.mount_sd
 except ImportError:
