@@ -23,15 +23,15 @@ as an alternative, I use a ```Dictionary``` with the name ```DtDict```. This dic
 
 ```
 Added:
-- list ```days_since_jan1```
-- indexes for dictionary keys: ```yy, mo, dd, wd, hh, mm, ss and ms```.
-- dictionaries: ```WeekdaysDict, MonthsDict, MonthsDictShort, DtNames, rtcRegsDict, NamesDt, DtDict and DtDfltDict```
-- In ```class DS3231:```, functions: ```weekday(), isLeapYear(), daysInMonth(), yearday() and cur_month()```.
+- list days_since_jan1
+- indexes for dictionary keys: yy, mo, dd, wd, hh, mm, ss and ms.
+- dictionaries: WeekdaysDict, MonthsDict, MonthsDictShort, DtNames, rtcRegsDict, NamesDt, DtDict and DtDfltDict
+- In class DS3231:, functions: weekday(), isLeapYear(), daysInMonth(), yearday() and cur_month().
 Modified:
-- functions: ```datetime_tuple(), tuple2seconds() and seconds2tuple()```.
-- In ```class: _BaseRTC```, function: ```datetime()```
+- functions: datetime_tuple(), tuple2seconds() and seconds2tuple().
+- In class: _BaseRTC, function: datetime()
 Removed:
-- ```import ucollection```
+- import ucollection
 ```
 In the file ```main.py``` is created an ```SD-Card object```. To accomplish this function ```mountit()``` in file ```mount_sd.py``` is called.
 When the SD-Card has been mounted successfully, an image file is loaded which then is displayed.
