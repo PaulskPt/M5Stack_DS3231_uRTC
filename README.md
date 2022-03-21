@@ -49,4 +49,5 @@ rtc = DS3231(i2c)
 The script ```main.py``` uses two different text fonts:
     ```lcd.FONT_DejaVu18```  and ```lcd.FONT_Default```.
 
+The copying of files to your M5Stack processor can be done with the ```Thonny``` app.
 
