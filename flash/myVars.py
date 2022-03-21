@@ -71,7 +71,7 @@ class MYVARS:
         return self.myVarsDict[k_dbg]
     
     def set_my_debug(self, new_my_debug):
-        if new_my_debug:
+        if new_my_debug is not None:
             if not self.myVarsDict[k_dbg]:
                 print("MYVARS.set_my_debug(): setting myVarsDict[k_dbg] to: ", new_my_debug)
             self.myVarsDict[k_dbg] = new_my_debug
@@ -81,22 +81,24 @@ class MYVARS:
     def get_font(self):
         return "FONT_" + self.fonts[self.myVarsDict[k_ftp]]
     
-    def set_font(self, fnt):
-        if fnt:
-            self.myVarsDict[k_ftp] = fnt
+    def set_font(self, new_fnt):
+        if new_fnt >= 0:
+            print("myVars.set_font(): param new_fnt = {}, this is font: {}".format(new_fnt, self.fonts[new_fnt]))
+            self.myVarsDict[k_ftp] = new_fnt
+        else:
+            print("myVars.set_font(): param new fnt = ", new_fnt)
             
     def get_fontsize(self):
         return self.myVarsDict[k_fsz]
     
     def set_fontsize(self, fsz):
-        if fsz:
+        if fsz >= 0:
             self.myVarsDict[k_fsz] = fsz
             
     def get_icon(idx):
-        if idx:
-            if idx >= 0 and idx < len(self.icons.keys()):
-                if idx in self.icons.keys():
-                    self.icons[idx]
-                else:
-                    if self.myVarsDict[k_dbg]:
-                        print("myVars.get_icon(): key {} not found in: {}".format(idx, self.icons.keys()))
+        if idx >= 0 and idx < len(self.icons.keys()):
+            if idx in self.icons.keys():
+                self.icons[idx]
+            else:
+                if self.myVarsDict[k_dbg]:
+                    print("myVars.get_icon(): key {} not found in: {}".format(idx, self.icons.keys()))
