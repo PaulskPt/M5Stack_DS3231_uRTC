@@ -3,11 +3,11 @@
 # Class for global variables
 
 # keys to myVarsDict
-k_sd  = 0
-k_dbg = 1
-k_ftp = 2
-k_fsz = 3
-k_ico = 4
+k_sd  = 0  # SD-Card object
+k_dbg = 1  # debug print flag
+k_ftp = 2  # font chosen
+k_fsz = 3  # font size
+k_ico = 4  # icon chosen
 
 class MYVARS:
     
@@ -63,7 +63,7 @@ class MYVARS:
         return self.myVarsDict[k_sd]
     
     def set_sd(self, new_sd):
-        if not isinstance(new_sd, type(None)):
+        if new_sd:
             # self.sd = new_sd
             self.myVarsDict[k_sd] = new_sd
     
@@ -71,7 +71,7 @@ class MYVARS:
         return self.myVarsDict[k_dbg]
     
     def set_my_debug(self, new_my_debug):
-        if not isinstance(new_my_debug, type(None)):
+        if new_my_debug:
             if not self.myVarsDict[k_dbg]:
                 print("MYVARS.set_my_debug(): setting myVarsDict[k_dbg] to: ", new_my_debug)
             self.myVarsDict[k_dbg] = new_my_debug
@@ -82,18 +82,18 @@ class MYVARS:
         return "FONT_" + self.fonts[self.myVarsDict[k_ftp]]
     
     def set_font(self, fnt):
-        if not isinstance(fnt, type(None)):
+        if fnt:
             self.myVarsDict[k_ftp] = fnt
             
     def get_fontsize(self):
         return self.myVarsDict[k_fsz]
     
     def set_fontsize(self, fsz):
-        if not isinstance(fsz, type(None)):
+        if fsz:
             self.myVarsDict[k_fsz] = fsz
             
     def get_icon(idx):
-        if not isinstance(idx, type(None)):
+        if idx:
             if idx >= 0 and idx < len(self.icons.keys()):
                 if idx in self.icons.keys():
                     self.icons[idx]
