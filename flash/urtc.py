@@ -204,6 +204,10 @@ def seconds2tuple(seconds):
             DtDict[ss],
             0)
 
+# +---------+
+# | CLASSES |
+# +---------+
+
 class _BaseRTC:
     _SWAP_DAY_WEEKDAY = False
 
@@ -225,7 +229,6 @@ class _BaseRTC:
         else:
             data &= ~mask
         self._register(register, bytearray((data,)))
-
 
     def datetime(self, datetime=None):
         #print("_BaseRTC.datetime(): param datetime received: ", datetime)
@@ -279,9 +282,7 @@ class _BaseRTC:
             #for _ in range(7):
             #    print("buffer[{}] = value {}".format(rtcRegsDict[_], _bcd2bin(buffer[_])), end='\n')
 
-# +---------+
-# | CLASSES |
-# +---------+
+
 class DS3231(_BaseRTC):
     _CONTROL_REGISTER = 0x0e
     _STATUS_REGISTER = 0x0f
