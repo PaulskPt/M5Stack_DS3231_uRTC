@@ -6,7 +6,10 @@
 # Docs: https://docs.micropython.org/en/v1.9.4/pyboard/library/uos.html
 
 import machine, uos
-from flash.myVars import MYVARS
+try:
+    from flash.myVars import MYVARS # contains class that keeps track of certain global variables
+except ImportError as exc:
+    from myVars import MYVARS
 #myV = MYVARS()  # create instance of myVars class
 #my_debug = myV.get_my_debug()
 #myV = None
@@ -22,7 +25,7 @@ def mountit(sd, myV):
         print(TAG+"value debug = ", my_debug)
     
     try:
-        if isinstance(sd, type(None)):  # Only try to mount if sd-card was not already mounted
+        if sd is None:  # Only try to mount if sd-card was not already mounted
             if my_debug:
                 print(TAG+"sd is not defined, we go to create sd and mount it")
             do_mount = True
@@ -41,7 +44,7 @@ def mountit(sd, myV):
         try:    
             sd = machine.SDCard(slot=3, miso=19, mosi=23, sck=18, cs=4)
             sd_crd_info = sd.info()
-            if not isinstance(sd_crd_info, type(None)):
+            if sd_crd_info is not None:
                 myV.set_sd(sd)  # save the sd value
                 if my_debug:
                     print(TAG+"SD-card info: ")
