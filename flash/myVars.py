@@ -72,7 +72,7 @@ class MYVARS:
     
     def set_my_debug(self, new_my_debug):
         if new_my_debug is not None:
-            if not self.myVarsDict[k_dbg]:
+            if self.myVarsDict[k_dbg]:
                 print("MYVARS.set_my_debug(): setting myVarsDict[k_dbg] to: ", new_my_debug)
             self.myVarsDict[k_dbg] = new_my_debug
         else:
