@@ -35,9 +35,9 @@ Removed:
 ```
 In the file ```main.py``` is created an ```SD-Card object```. To accomplish this function ```mountit()``` in file ```mount_sd.py``` is called.
 (M5Stack usually mounts the SD-Card at boot time from within the file ```boot.py```. To control better the mounting/unmounting I decided to write the functions outside of boot.py). When the SD-Card has been mounted successfully, an image file is loaded which then is displayed.
-The image loaded I did copy to this repo in the subdirectory ```/flash/sd```.
+The image loaded I did copy to this repo in the subfolder ```/flash/sd```.
 You can copy the image file ```Avatar_01clr.jpg``` to an ```img``` folder on the SD-Card. If you have an SD-Card in your M5Stack processor
-and you have not a folder ```sd```, you have to create it. Then copy the file ```Avatar_01clr.jpg``` to the folder ```/sd/img/```.
+and you have not yet a folder ```img```, you have to create it. Then copy the file ```Avatar_01clr.jpg``` to the folder ```/sd/img/```.
 
 In ```main.py``` an rtc object is created using the following commands:
 ```
