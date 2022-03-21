@@ -400,22 +400,22 @@ class DS3231(_BaseRTC):
             )
         datetime = datetime_tuple(*datetime)
         buffer = bytearray(3)
-        buffer[0] = (_bin2bcd(datetime.minute)
-                     if datetime.minute is not None else 0x80)
-        buffer[1] = (_bin2bcd(datetime.hour)
-                     if datetime.hour is not None else 0x80)
-        if datetime.day is not None:
-            if datetime.weekday is not None:
+        buffer[0] = (_bin2bcd(datetime[mm])
+                     if datetime[mm] is not None else 0x80)
+        buffer[1] = (_bin2bcd(datetime[hh])
+                     if datetime[hh] is not None else 0x80)
+        if datetime[dd] is not None:
+            if datetime[wd] is not None:
                 raise ValueError("can't specify both day and weekday")
-            buffer[2] = _bin2bcd(datetime.day)
-        elif datetime.weekday is not None:
-            buffer[2] = _bin2bcd(datetime.weekday) | 0b01000000
+            buffer[2] = _bin2bcd(datetime[dd])
+        elif datetime[wd] is not None:
+            buffer[2] = _bin2bcd(datetime[wd]) | 0b01000000
         else:
             buffer[2] = 0x80
         self._register(self._ALARM_REGISTERS[alarm], buffer)
         if alarm == 0:
             # handle seconds
-            buffer = bytearray([_bin2bcd(datetime.second)
-                                if datetime.second is not None else 0x80])
+            buffer = bytearray([_bin2bcd(datetime[ss])
+                                if datetime[ss] is not None else 0x80])
             self._register(self._ALARM_REGISTERS[alarm] - 1, buffer)
 
