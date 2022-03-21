@@ -83,10 +83,12 @@ class MYVARS:
     
     def set_font(self, new_fnt):
         if new_fnt >= 0:
-            print("myVars.set_font(): param new_fnt = {}, this is font: {}".format(new_fnt, self.fonts[new_fnt]))
+            if self.myVarsDict[k_dbg]:
+                print("myVars.set_font(): param new_fnt = {}, this is font: {}".format(new_fnt, self.fonts[new_fnt]))
             self.myVarsDict[k_ftp] = new_fnt
         else:
-            print("myVars.set_font(): param new fnt = ", new_fnt)
+            if self.myVarsDict[k_dbg]:
+                print("myVars.set_font(): param new fnt = ", new_fnt)
             
     def get_fontsize(self):
         return self.myVarsDict[k_fsz]
