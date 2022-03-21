@@ -5,7 +5,7 @@ M5Stack_DS3231_uRTC
  Origin: Adafruit-uRTC (https://github.com/adafruit/Adafruit-uRTC)
  Adafruit's library has the status 'Deprecated' because Adafruit changed it's policy to support only CircuitPython.
  The RTC module: ```urtc.py``` differs is in various ways from the original urtc.py from Adafruit.
- Adafruit's urtc library is suitable for various models of RTC modules. My urtc module serves only the DS3231 RTC,
+ Adafruit's urtc library is suitable for various RTC modules. My urtc library serves only the DS3231 RTC,
  in combination with a M5Stack Core1 (BASIC) controller. It can also be used with other M5Stack units like the Core2.
 
  In file ```myVars.py``` is the ```class MVARS```, used to save various values so they can be used 
