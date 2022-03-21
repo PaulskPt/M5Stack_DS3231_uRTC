@@ -1,6 +1,7 @@
 M5Stack_DS3231_uRTC
- Micropython module for DS3231 RTC with M5Stack Cores
- tested with Core1 (BASIC)
+ Micropython module for DS3231 RTC with M5Stack Cores.
+ 
+ The repo is created and tested on a M5Stack Core1 (BASIC) processor.
 
  Origin: Adafruit-uRTC (https://github.com/adafruit/Adafruit-uRTC)
  Adafruit's library has the status 'Deprecated' because Adafruit changed it's policy to support only CircuitPython.
