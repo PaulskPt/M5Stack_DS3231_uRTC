@@ -34,6 +34,7 @@ time.sleep(5)
 def M5Info_s(myV):
     global lStart, sd, my_debug, rtc
     TAG = "M5Info(): "
+    myV.set_my_debug(False)
     my_debug = myV.get_my_debug()
     sd = myV.get_sd()
     
@@ -42,7 +43,7 @@ def M5Info_s(myV):
     lcd.font(my_font)
     myV.set_font(my_font) # save current font type
     if my_debug:
-        print(TAG+"lcd.font type set to: ", myV.get_font())
+        print(TAG+"line 24: lcd.font type set to:", myV.get_font())
     #-----------------------------------------
 
     if rtc is None:
@@ -78,7 +79,7 @@ def M5Info_s(myV):
         lcd.font(my_font)
         myV.set_font(my_font) # save current font type
         if my_debug:
-            print(TAG+"lcd.font type changed to: ", myV.get_font())
+            print(TAG+"line 82: lcd.font type changed to:", myV.get_font())
         #-------------------------------------------------------------
         time.sleep(5)
 
